@@ -23,7 +23,10 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const typeNum = (arr) => {
-  // Solution code here...
+  const newL=arr.filter( function(a){
+    return typeof a==='number';
+  });
+  return newL;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,7 +38,10 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
 const containsAnd = (arr) => {
-  // Solution code here...
+  const newL=arr.filter( function(a){
+    return a.includes('and');
+  });
+  return newL;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,7 +53,10 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
+  const newL=arr.filter( function(a){
+    return a%2!==0;
+  });
+  return newL;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,9 +71,16 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+  const vowels=['a','e','i','o','u'];
+  const newL=arr.filter( function(a){
+    return (
+      a.includes(vowels[0]) ||
+      a.includes(vowels[1]) ||
+      a.includes(vowels[3]) ||
+      a.includes(vowels[4]));
+  });
+  return newL;
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -75,7 +91,10 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  const newL=arr.filter( function(a){
+    return !forbiddenValues.includes(a);
+  });
+  return newL;
 };
 
 /* ------------------------------------------------------------------------------------------------

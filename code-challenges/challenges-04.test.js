@@ -63,14 +63,9 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  const firstList=str.split(' ');
-  let secondList=[];
-  for(let i=0; i<firstList.length; i++){
-    if(/[A-Z]/.test(firstList[i][0])){
-      secondList.push(firstList[i]);
-    }
-  }
-  return secondList;
+  let regex=/\b[A-Z][a-z]+/g;
+  let array=str.match(regex);
+  return array || [];
 };
 
 /* ------------------------------------------------------------------------------------------------

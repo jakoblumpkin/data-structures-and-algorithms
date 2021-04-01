@@ -58,9 +58,18 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  function isNumeric(value) {
+    return /^-?\d+$/.test(value);
+  }
+  let finalList='';
+  const newArr=arr.split('');
+  newArr.forEach((a)=>{
+    if(isNumeric(a)){
+      finalList=finalList+a;
+    }
+  });
+  return finalList;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
 
@@ -70,7 +79,14 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  const mylist=str.split('');
+  let finalstr='';
+  mylist.forEach((a, idx)=> {
+    if(idx%2===0!==true){
+      finalstr=finalstr+a;
+    }
+  });
+  return finalstr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,7 +96,13 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  let num=0;
+  arr.forEach((a)=>{
+    if(a.includes(':)')===false){
+      num=num+1;
+    }
+  });
+  return ! num>0;
 };
 
 /* ------------------------------------------------------------------------------------------------

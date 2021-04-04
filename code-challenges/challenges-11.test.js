@@ -44,7 +44,9 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
-  // Solution code here...
+  var number = word.length;
+  var myRegex = /^[0-6]$/;
+  return myRegex.test(number);
 };
 
 /* ------------------------------------------------------------------------------------------------
